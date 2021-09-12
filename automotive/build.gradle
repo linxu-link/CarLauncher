@@ -4,6 +4,7 @@ plugins {
 
 android {
     compileSdk 30
+    buildToolsVersion '30.0.2'
 
     defaultConfig {
         applicationId "com.android.car.carlauncher"
@@ -25,8 +26,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildToolsVersion '30.0.2'
-    compileSdkVersion 30
 }
 
 dependencies {
@@ -36,4 +35,5 @@ dependencies {
     implementation project(":lib-car-ui")
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation files('libs/car.jar')
+    implementation files('libs/android-pre-proguard.jar')
 }

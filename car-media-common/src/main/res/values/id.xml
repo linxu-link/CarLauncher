@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Ids for PlaybackControlsActionBar -->
-    <item type="id" name="skip_prev" />
-    <item type="id" name="skip_next" />
-    <item type="id" name="track_list" />
-    <item type="id" name="overflow" />
-</resources>
