@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2019 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <!-- Intent used to launch the app selector as popup -->
+    <string name="launcher_popup_intent" translatable="false">
+        intent:#Intent;component=com.android.car.carlauncher/.AppGridActivity;launchFlags=0x24000000;S.com.android.car.carlauncher.mode=MEDIA_POPUP;end
+    </string>
+
+    <!-- Intent used to launch the app selector -->
+    <string name="launcher_intent" translatable="false">
+        intent:#Intent;component=com.android.car.carlauncher/.AppGridActivity;launchFlags=0x24000000;S.com.android.car.carlauncher.mode=MEDIA_ONLY;end
+    </string>
+
+    <!-- A list of custom media component names, which are created by calling
+     ComponentName#flattenToString(). Those components won't be shown
+     in the launcher because their applications' launcher activities will be
+     shown. Those components won't be opened by Media Center, and their
+     launcher activities will be launched directly instead. -->
+    <string-array name="custom_media_packages" translatable="false">
+        <item>com.android.car.radio/com.android.car.radio.service.RadioAppService</item>
+    </string-array>
+</resources>

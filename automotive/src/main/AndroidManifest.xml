@@ -1,0 +1,77 @@
+<!--
+  Copyright (C) 2017 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+   -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.car.carlauncher">
+
+    <uses-permission android:name="android.car.permission.ACCESS_CAR_PROJECTION_STATUS" />
+    <!--  System permission to host maps activity  -->
+    <uses-permission android:name="android.permission.ACTIVITY_EMBEDDING" />
+    <!--  System permission to send events to hosted maps activity  -->
+    <uses-permission android:name="android.permission.INJECT_EVENTS" />
+    <!--  System permission to use internal system windows  -->
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW" />
+    <!--  System permissions to bring hosted maps activity to front on main display  -->
+    <uses-permission android:name="android.permission.MANAGE_ACTIVITY_STACKS" />
+    <!--  System permission to query users on device  -->
+    <uses-permission android:name="android.permission.MANAGE_USERS" />
+    <!--  System permission to control media playback of the active session  -->
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+    <!--  System permission to get app usage data  -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <!--  System permission to query all installed packages  -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <!--  To connect to media browser services in other apps, media browser clients
+        that target Android 11 need to add the following in their manifest  -->
+    <queries>
+        <intent>
+            <action android:name="android.media.browse.MediaBrowserService" />
+        </intent>
+    </queries>
+    <application
+        android:icon="@drawable/ic_launcher_home"
+        android:label="@string/app_title"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Launcher">
+        <activity
+            android:name=".CarLauncher"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="uiMode|mcc|mnc"
+            android:launchMode="singleTask"
+            android:resumeWhilePausing="true"
+            android:stateNotNeeded="true"
+            android:windowSoftInputMode="adjustPan">
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AppGridActivity"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.Launcher.AppGridActivity">
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
+    </application>
+</manifest>

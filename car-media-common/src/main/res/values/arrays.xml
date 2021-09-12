@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2019 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <!-- These are drawables to be used as placeholder album art. Album art
+        can be displayed in 2 modes, foreground or background. Foreground art
+        is displayed prominently (such as with other song metadata), whereas
+        background art is only used for backgrounds, and is typically
+        partially blurred/hidden. -->
+    <array name="placeholder_images">
+        <item>@drawable/ic_placeholder_0</item>
+        <item>@drawable/ic_placeholder_1</item>
+        <item>@drawable/ic_placeholder_2</item>
+        <item>@drawable/ic_placeholder_3</item>
+        <item>@drawable/ic_placeholder_4</item>
+        <item>@drawable/ic_placeholder_5</item>
+        <item>@drawable/ic_placeholder_6</item>
+        <item>@drawable/ic_placeholder_7</item>
+    </array>
+    <!-- This array is for the backgrounds of the placeholder images above -->
+    <array name="placeholder_backgrounds">
+        <item>@drawable/placeholder_color_drawable_0</item>
+        <item>@drawable/placeholder_color_drawable_1</item>
+        <item>@drawable/placeholder_color_drawable_2</item>
+        <item>@drawable/placeholder_color_drawable_3</item>
+        <item>@drawable/placeholder_color_drawable_4</item>
+        <item>@drawable/placeholder_color_drawable_5</item>
+        <item>@drawable/placeholder_color_drawable_6</item>
+        <item>@drawable/placeholder_color_drawable_7</item>
+    </array>
+
+
+    <!-- These media sources are displayed by the AppSelectionFragment in the order defined here.
+        Other sources follow in alphabetical order. -->
+    <string-array name="preferred_media_sources" translatable="false">
+        <item>com.android.car.radio/.service.RadioAppService</item>
+    </string-array>
+
+</resources>

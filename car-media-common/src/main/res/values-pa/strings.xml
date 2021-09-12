@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright 2018, The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="album_art" msgid="3392647029019061691">"ਐਲਬਮ ਕਲਾ"</string>
+    <string name="metadata_default_title" msgid="5902775732281325081">"ਕੋਈ ਸਿਰਲੇਖ ਨਹੀਂ"</string>
+    <string name="default_error_message" msgid="4044331619453864482">"ਕੋਈ ਗੜਬੜ ਹੈ। ਬਾਅਦ ਵਿੱਚ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"</string>
+    <string name="error_code_app_error" msgid="3608680401453743688">"ਫਿਲਹਾਲ ਇਹ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ"</string>
+    <string name="error_code_not_supported" msgid="8004310657548193089">"ਇਹ ਐਪ ਇਹ ਨਹੀਂ ਕਰ ਸਕਦੀ"</string>
+    <string name="error_code_authentication_expired" msgid="1727285213286610186">"ਇਸ ਐਪ ਨੂੰ ਵਰਤਣ ਲਈ ਸਾਈਨ-ਇਨ ਕਰੋ"</string>
+    <string name="error_code_premium_account_required" msgid="2328664287270814966">"ਪ੍ਰੀਮੀਅਮ ਪਹੁੰਚ ਦੀ ਲੋੜ ਹੈ"</string>
+    <string name="error_code_concurrent_stream_limit" msgid="493048763425570552">"ਬਹੁਤ ਜ਼ਿਆਦਾ ਡੀਵਾਈਸਾਂ \'ਤੇ ਸੁਣਿਆ ਜਾ ਰਿਹਾ ਹੈ"</string>
+    <string name="error_code_parental_control_restricted" msgid="325145513462419399">"ਇਸ ਸਮੱਗਰੀ ਨੂੰ ਬਲਾਕ ਕੀਤਾ ਗਿਆ ਹੈ"</string>
+    <string name="error_code_not_available_in_region" msgid="5840935836875073145">"ਇੱਥੇ ਇਹ ਸਮੱਗਰੀ ਨਹੀਂ ਮਿਲ ਸਕਦੀ"</string>
+    <string name="error_code_content_already_playing" msgid="1306236349553004461">"ਇਹ ਸਮੱਗਰੀ ਪਹਿਲਾਂ ਹੀ ਚੱਲ ਰਹੀ ਹੈ"</string>
+    <string name="error_code_skip_limit_reached" msgid="4203743406433151146">"ਕਿਸੇ ਹੋਰ ਟਰੈਕ ਨੂੰ ਛੱਡਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ"</string>
+    <string name="error_code_action_aborted" msgid="8611777981356536501">"ਪੂਰਾ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"</string>
+    <string name="error_code_end_of_queue" msgid="6935022448319288887">"ਹੋਰ ਕੁਝ ਵੀ ਕਤਾਰਬੱਧ ਨਹੀਂ ਹੈ"</string>
+</resources>

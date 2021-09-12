@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018, The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<resources>
+    <!-- Album art scrim -->
+    <color name="album_art_scrim">#000000</color>
+
+    <!-- App icons selection background -->
+    <color name="appbar_view_icon_background_color">#66ffffff</color>
+
+    <!-- Color used on the placeholder album art -->
+    <color name="album_art_placeholder_color">@color/car_grey_800</color>
+
+    <!-- Media source's color if not provided -->
+    <color name="media_source_default_color">@android:color/background_dark</color>
+
+    <!-- Color used on the minimized progress bar background -->
+    <color name="minimized_progress_bar_background">#464A4D</color>
+    <!-- Color used on the minimized progress bar -->
+    <color name="minimized_progress_bar_highlight">@color/media_source_default_color</color>
+
+    <!-- Color used on the fab spinner -->
+    <color name="fab_spinner_indeterminate_color">@color/media_source_default_color</color>
+
+    <!-- Color used on media control buttons -->
+    <color name="media_button_tint">#FFFFFFFF</color>
+    <color name="media_button_tint_disabled">#80FFFFFF</color>
+
+    <color name="placeholder_color_0">#669DF6</color>
+    <color name="placeholder_color_1">#667EF6</color>
+    <color name="placeholder_color_2">#CA71E6</color>
+    <color name="placeholder_color_3">#85B95B</color>
+    <color name="placeholder_color_4">#5BB974</color>
+    <color name="placeholder_color_5">#EE925C</color>
+    <color name="placeholder_color_6">#EE675C</color>
+    <color name="placeholder_color_7">#FCC933</color>
+
+</resources>

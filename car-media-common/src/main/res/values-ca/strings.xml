@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright 2018, The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="album_art" msgid="3392647029019061691">"Imatge de l\'àlbum"</string>
+    <string name="metadata_default_title" msgid="5902775732281325081">"Sense títol"</string>
+    <string name="default_error_message" msgid="4044331619453864482">"S\'ha produït un error. Prova-ho més tard."</string>
+    <string name="error_code_app_error" msgid="3608680401453743688">"Ara mateix aquesta acció no es pot dur a terme"</string>
+    <string name="error_code_not_supported" msgid="8004310657548193089">"L\'aplicació no pot dur a terme aquesta acció"</string>
+    <string name="error_code_authentication_expired" msgid="1727285213286610186">"Inicia la sessió per utilitzar aquesta aplicació"</string>
+    <string name="error_code_premium_account_required" msgid="2328664287270814966">"Es requereix accés Premium"</string>
+    <string name="error_code_concurrent_stream_limit" msgid="493048763425570552">"S\'està escoltant contingut en massa dispositius"</string>
+    <string name="error_code_parental_control_restricted" msgid="325145513462419399">"Aquest contingut està bloquejat"</string>
+    <string name="error_code_not_available_in_region" msgid="5840935836875073145">"El contingut no està disponible en aquesta regió"</string>
+    <string name="error_code_content_already_playing" msgid="1306236349553004461">"Aquest contingut ja s\'està reproduint"</string>
+    <string name="error_code_skip_limit_reached" msgid="4203743406433151146">"No es poden saltar més cançons"</string>
+    <string name="error_code_action_aborted" msgid="8611777981356536501">"No s\'ha pogut acabar. Torna-ho a provar."</string>
+    <string name="error_code_end_of_queue" msgid="6935022448319288887">"No hi ha res més a la cua"</string>
+</resources>

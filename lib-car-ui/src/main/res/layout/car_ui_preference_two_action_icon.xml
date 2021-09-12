@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2019 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?android:attr/listPreferredItemHeightSmall"
+    android:tag="carUiPreference">
+
+    <com.android.car.ui.uxr.DrawableStateConstraintLayout
+        android:id="@+id/car_ui_first_action_container"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+        android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/car_ui_second_action_container"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <com.android.car.ui.uxr.DrawableStateImageView
+            style="@style/Preference.CarUi.Icon"
+            android:id="@android:id/icon"
+            android:layout_width="@dimen/car_ui_preference_icon_size"
+            android:layout_height="@dimen/car_ui_preference_icon_size"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.android.car.ui.uxr.DrawableStateTextView
+            android:id="@android:id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/car_ui_preference_icon_margin_end"
+            app:layout_goneMarginStart="0dp"
+            android:textDirection="locale"
+            android:singleLine="true"
+            android:textAppearance="@style/TextAppearance.CarUi.PreferenceTitle"
+            app:layout_constraintStart_toEndOf="@android:id/icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@android:id/summary"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <com.android.car.ui.uxr.DrawableStateTextView
+            android:id="@android:id/summary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/car_ui_preference_icon_margin_end"
+            app:layout_goneMarginStart="0dp"
+            android:textDirection="locale"
+            android:textAppearance="@style/TextAppearance.CarUi.PreferenceSummary"
+            android:maxLines="2"
+            app:layout_constraintStart_toEndOf="@android:id/icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@android:id/title"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </com.android.car.ui.uxr.DrawableStateConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/car_ui_second_action_container"
+        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/car_ui_first_action_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:id="@+id/car_ui_divider"
+            android:layout_width="@dimen/car_ui_divider_width"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/car_ui_preference_content_margin_bottom"
+            android:layout_marginTop="@dimen/car_ui_preference_content_margin_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/car_ui_secondary_action"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            style="@style/Preference.CarUi.Divider"/>
+
+        <com.android.car.ui.uxr.DrawableStateFrameLayout
+            android:id="@+id/car_ui_secondary_action"
+            android:layout_width="?android:attr/listPreferredItemHeightSmall"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+            android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+            app:layout_constraintStart_toEndOf="@id/car_ui_divider"
+            app:layout_constraintEnd_toStartOf="@android:id/widget_frame"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <com.android.car.ui.uxr.DrawableStateImageView
+                android:id="@+id/car_ui_secondary_action_concrete"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:tintMode="src_in"
+                android:tint="@color/car_ui_text_color_primary"/>
+        </com.android.car.ui.uxr.DrawableStateFrameLayout>
+
+        <!-- The widget frame is required for androidx preferences, but we won't use it. -->
+        <FrameLayout
+            android:id="@android:id/widget_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

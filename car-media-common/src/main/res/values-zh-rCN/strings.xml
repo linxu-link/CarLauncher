@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright 2018, The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="album_art" msgid="3392647029019061691">"专辑封面"</string>
+    <string name="metadata_default_title" msgid="5902775732281325081">"无标题"</string>
+    <string name="default_error_message" msgid="4044331619453864482">"出了点问题。请稍后重试。"</string>
+    <string name="error_code_app_error" msgid="3608680401453743688">"目前无法执行该操作"</string>
+    <string name="error_code_not_supported" msgid="8004310657548193089">"此应用无法执行该操作"</string>
+    <string name="error_code_authentication_expired" msgid="1727285213286610186">"登录才能使用此应用"</string>
+    <string name="error_code_premium_account_required" msgid="2328664287270814966">"需要有付费帐号才能访问"</string>
+    <string name="error_code_concurrent_stream_limit" msgid="493048763425570552">"同时使用太多设备聆听"</string>
+    <string name="error_code_parental_control_restricted" msgid="325145513462419399">"该内容已遭到屏蔽"</string>
+    <string name="error_code_not_available_in_region" msgid="5840935836875073145">"所在地区不提供这项内容"</string>
+    <string name="error_code_content_already_playing" msgid="1306236349553004461">"系统已在播放这项内容"</string>
+    <string name="error_code_skip_limit_reached" msgid="4203743406433151146">"无法再跳过更多曲目"</string>
+    <string name="error_code_action_aborted" msgid="8611777981356536501">"无法完成操作。请重试。"</string>
+    <string name="error_code_end_of_queue" msgid="6935022448319288887">"队列中没有任何其他内容"</string>
+</resources>

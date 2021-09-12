@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018, The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<resources>
+    <!-- The maximum number of lines for the title of a currently playing media item. -->
+    <integer name="playback_title_text_max_lines">2</integer>
+
+    <!-- The maximum number of lines for the subtitle of a currently plaing media item. -->
+    <integer name="playback_subtitle_text_max_lines">1</integer>
+
+    <!-- The amount of time it takes for a new album image to fade in. -->
+    <integer name="new_album_art_fade_in_duration">250</integer>
+
+    <!-- Number of columns in app selector -->
+    <integer name="num_app_selector_columns">3</integer>
+
+    <!-- Defines the maximum square into which requested media items bitmaps must fit (smaller
+        bitmaps are not modified, larger ones are resized to fit into the square, preserving their
+        aspect ratio). A 256x256 bitmap takes 250 KB or memory, and a 512x512 takes 1 MB so this
+        number should be set conservatively while making sure the displayed bitmaps look good.
+        This value is also passed to media applications so they can pre-fetch their artwork at an
+        optimal resolution.
+    -->
+    <integer name="media_items_bitmap_max_size_px">256</integer>
+
+    <!-- The maximum number of lines for the error message in the media widget. -->
+    <integer name="widget_error_text_max_lines">3</integer>
+
+</resources>

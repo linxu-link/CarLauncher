@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018, The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Content description of album art image [CHAR LIMIT=50] -->
+    <string name="album_art">Album Art</string>
+    <!-- Default title of current track's metadata. [CHAR LIMIT=50] -->
+    <string name="metadata_default_title">No Title</string>
+
+    <!-- Default error message [CHAR LIMIT=100] -->
+    <string name="default_error_message">Something’s wrong. Try later.</string>
+    <!-- Error message set when the application state is invalid to fulfill the request. [CHAR LIMIT=100] -->
+    <string name="error_code_app_error">Can’t do that right now</string>
+    <!-- Error message set when the request is not supported by the application. [CHAR LIMIT=100] -->
+    <string name="error_code_not_supported">This app can’t do that</string>
+    <!-- Error message set when the request cannot be performed because authentication has expired. [CHAR LIMIT=100] -->
+    <string name="error_code_authentication_expired">Sign in to use this app</string>
+    <!-- Error message set when a premium account is required for the request to succeed. [CHAR LIMIT=100] -->
+    <string name="error_code_premium_account_required">Premium access required</string>
+    <!-- Error message set when too many concurrent streams are detected. [CHAR LIMIT=100] -->
+    <string name="error_code_concurrent_stream_limit">Listening on too many devices</string>
+    <!-- Error message set when the content is blocked due to parental controls. [CHAR LIMIT=100] -->
+    <string name="error_code_parental_control_restricted">That content is blocked</string>
+    <!-- Error message set when the content is blocked due to being regionally unavailable. [CHAR LIMIT=100] -->
+    <string name="error_code_not_available_in_region">Can’t get that content here</string>
+    <!-- Error message set when the requested content is already playing. [CHAR LIMIT=100] -->
+    <string name="error_code_content_already_playing">Already playing that content</string>
+    <!-- Error message set when the application cannot skip any more songs because skip limit is reached. [CHAR LIMIT=100] -->
+    <string name="error_code_skip_limit_reached">Can’t skip any more tracks</string>
+    <!-- Error message set when the action is interrupted due to some external event. [CHAR LIMIT=100] -->
+    <string name="error_code_action_aborted">Couldn’t finish. Try again.</string>
+    <!-- Error message set when the playback navigation (previous, next) is not possible because the queue was exhausted. [CHAR LIMIT=100] -->
+    <string name="error_code_end_of_queue">Nothing else is queued up</string>
+</resources>

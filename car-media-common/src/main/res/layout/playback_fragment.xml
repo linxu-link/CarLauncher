@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2018, The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<com.android.car.ui.FocusArea
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="6dp">
+
+        <com.android.car.apps.common.CrossfadeImageView
+            android:id="@+id/album_background"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:scaleType="fitStart"/>
+
+        <View
+            android:id="@+id/playback_scrim"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/album_art_scrim"
+            android:focusable="true"
+            android:alpha="@dimen/album_art_scrim_alpha"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/playback_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/app_icon"
+                android:layout_width="@dimen/app_selector_icon_size"
+                android:layout_height="@dimen/app_selector_icon_size"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/playback_fragment_text_margin_x"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_app_switch"
+                app:layout_constraintTop_toTopOf="@+id/app_name"
+                app:layout_constraintBottom_toBottomOf="@+id/app_name"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/app_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/playback_fragment_text_margin_top"
+                android:layout_marginStart="@dimen/playback_fragment_text_margin_x"
+                android:layout_marginEnd="@dimen/playback_fragment_text_margin_x"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                app:layout_constraintStart_toEndOf="@+id/app_icon"
+                app:layout_constraintEnd_toStartOf="@+id/app_selector_container"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/PlaybackTitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/playback_fragment_text_margin_top"
+                android:layout_marginStart="@dimen/playback_fragment_text_margin_x"
+                android:layout_marginEnd="@dimen/playback_fragment_text_margin_x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/app_name"/>
+
+            <TextView
+                android:id="@+id/subtitle"
+                style="@style/PlaybackSubtitleStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/playback_fragment_text_margin_top"
+                android:layout_marginStart="@dimen/playback_fragment_text_margin_x"
+                android:layout_marginEnd="@dimen/playback_fragment_text_margin_x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/app_selector_container"
+                app:layout_constraintTop_toBottomOf="@+id/title"/>
+
+            <com.android.car.apps.common.UxrTextView
+                android:id="@+id/error_message"
+                style="@style/FullScreenErrorMessageStyle"
+                android:layout_marginHorizontal="@dimen/playback_fragment_text_margin_x"
+                android:maxLines="@integer/widget_error_text_max_lines"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/app_name"
+                app:layout_constraintBottom_toTopOf="@+id/error_button"
+            />
+
+            <com.android.car.apps.common.UxrButton
+                android:id="@+id/error_button"
+                style="@style/FullScreenErrorButtonStyle"
+                android:layout_marginTop="@dimen/playback_fragment_error_button_margin_top"
+                android:layout_marginBottom="@dimen/playback_fragment_error_button_margin_bottom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/error_message"
+                app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+            <FrameLayout
+                android:id="@+id/app_selector_container"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="@dimen/app_selector_icon_touch_target"
+                android:layout_height="@dimen/app_selector_icon_touch_target"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginEnd="@dimen/app_selector_margin_x"
+                app:layout_constraintTop_toTopOf="@+id/app_name"
+                app:layout_constraintBottom_toBottomOf="@+id/app_name"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:id="@+id/app_selector"
+                    android:layout_width="@dimen/app_selector_icon_size"
+                    android:layout_height="@dimen/app_selector_icon_size"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_app_switch"
+                    android:tint="@color/icon_tint"/>
+            </FrameLayout>
+
+            <com.android.car.media.common.PlaybackControlsActionBar
+                android:id="@+id/playback_controls"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/playback_fragment_controls_margin_bottom"
+                app:columns="3"
+                app:enableOverflow="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</com.android.car.ui.FocusArea>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright 2018, The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="album_art" msgid="3392647029019061691">"Portada de álbum"</string>
+    <string name="metadata_default_title" msgid="5902775732281325081">"Sen título"</string>
+    <string name="default_error_message" msgid="4044331619453864482">"Produciuse un problema. Téntao máis tarde."</string>
+    <string name="error_code_app_error" msgid="3608680401453743688">"Nestes momentos non se pode realizar a acción"</string>
+    <string name="error_code_not_supported" msgid="8004310657548193089">"Esta aplicación non pode realizar a acción"</string>
+    <string name="error_code_authentication_expired" msgid="1727285213286610186">"Inicia sesión para utilizar esta aplicación"</string>
+    <string name="error_code_premium_account_required" msgid="2328664287270814966">"Requírese acceso premium"</string>
+    <string name="error_code_concurrent_stream_limit" msgid="493048763425570552">"Estase escoitando contido en demasiados dispositivos"</string>
+    <string name="error_code_parental_control_restricted" msgid="325145513462419399">"Ese contido está bloqueado"</string>
+    <string name="error_code_not_available_in_region" msgid="5840935836875073145">"Aquí non se pode acceder a ese contido"</string>
+    <string name="error_code_content_already_playing" msgid="1306236349553004461">"Xa se está reproducindo ese contido"</string>
+    <string name="error_code_skip_limit_reached" msgid="4203743406433151146">"Non se poden saltar máis pistas"</string>
+    <string name="error_code_action_aborted" msgid="8611777981356536501">"Non se puido completar a acción. Téntao de novo."</string>
+    <string name="error_code_end_of_queue" msgid="6935022448319288887">"Non hai nada máis na cola"</string>
+</resources>

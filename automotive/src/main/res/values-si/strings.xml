@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Copyright (C) 2018 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_title" msgid="1995858460392177468">"මෝටර් රථ දියත්කරණය"</string>
+    <string name="app_launcher_title_all_apps" msgid="3215107396036838217">"සියලු යෙදුම්"</string>
+    <string name="app_launcher_title_media_only" msgid="4400886555907422816">"මාධ්‍ය යෙදුම්"</string>
+    <string name="driving_toast_text" msgid="149483091947120092">"<xliff:g id="APP_NAME">%1$s</xliff:g> හට රිය පදවන අතරේ යතුරු පුවරුව භාවිතා කළ නොහැක."</string>
+    <string name="greeting" msgid="7164414111783832396">"ආයුබෝවන්, <xliff:g id="USER">%s</xliff:g>"</string>
+    <plurals name="projection_devices" formatted="false" msgid="4740612230451956299">
+      <item quantity="one">උපාංග <xliff:g id="COUNT_1">%d</xliff:g></item>
+      <item quantity="other">උපාංග <xliff:g id="COUNT_1">%d</xliff:g></item>
+    </plurals>
+    <string name="hide_debug_apps" msgid="6128313544379622475">"නිදොස් කිරීමේ යෙදුම් සඟවන්න"</string>
+    <string name="show_debug_apps" msgid="4521073121286325786">"නිදොස් කිරීමේ යෙදුම් පෙන්වන්න"</string>
+</resources>
