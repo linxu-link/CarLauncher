@@ -231,7 +231,7 @@ public final class AppGridActivity extends Activity implements InsetsChangedList
         updateAppsLists();
     }
 
-    /** Updates the list of all apps, and the list of the most recently used ones. */
+    /** 更新所有应用的列表以及最近使用的应用的列表 */
     private void updateAppsLists() {
         Set<String> blackList = mShowAllApps ? Collections.emptySet() : mHiddenApps;
         LauncherAppsInfo appsInfo = AppLauncherUtils.getLauncherApps(blackList,
@@ -285,8 +285,7 @@ public final class AppGridActivity extends Activity implements InsetsChangedList
     }
 
     /**
-     * Note that in order to obtain usage stats from the previous boot,
-     * the device must have gone through a clean shut down process.
+     * 请注意，为了从上一次boot中获得使用情况统计数据，设备必须经过干净的关闭过程。
      */
     private List<AppMetaData> getMostRecentApps(LauncherAppsInfo appsInfo) {
         ArrayList<AppMetaData> apps = new ArrayList<>();
@@ -294,8 +293,7 @@ public final class AppGridActivity extends Activity implements InsetsChangedList
             return apps;
         }
 
-        // get the usage stats starting from 1 year ago with a INTERVAL_YEARLY granularity
-        // returning entries like:
+        // 获取从1年前开始的使用情况统计数据，返回如下条目：
         // "During 2017 App A is last used at 2017/12/15 18:03"
         // "During 2017 App B is last used at 2017/6/15 10:00"
         // "During 2018 App A is last used at 2018/1/1 15:12"
@@ -320,23 +318,21 @@ public final class AppGridActivity extends Activity implements InsetsChangedList
             String packageName = usageStats.mPackageName;
             currentIndex++;
 
-            // do not include self
+            // 不包括自己
             if (packageName.equals(getPackageName())) {
                 continue;
             }
 
-            // TODO(b/136222320): UsageStats is obtained per package, but a package may contain
-            //  multiple media services. We need to find a way to get the usage stats per service.
+            // TODO(b/136222320): 每个包都可以获得UsageStats，但一个包可能包含多个媒体服务。我们需要找到一种方法来获取每个服务的使用率统计数据。
             ComponentName componentName = AppLauncherUtils.getMediaSource(mPackageManager,
                     packageName);
-            // Exempt media services from background and launcher checks
+            // 免除媒体服务的后台和启动器检查
             if (!appsInfo.isMediaService(componentName)) {
-                // do not include apps that only ran in the background
+                // 不要包括仅在后台运行的应用程序
                 if (usageStats.getTotalTimeInForeground() == 0) {
                     continue;
                 }
-
-                // do not include apps that don't support starting from launcher
+                // 不要包含不支持从启动器启动的应用程序
                 Intent intent = getPackageManager().getLaunchIntentForPackage(packageName);
                 if (intent == null || !intent.hasCategory(Intent.CATEGORY_LAUNCHER)) {
                     continue;
@@ -344,7 +340,7 @@ public final class AppGridActivity extends Activity implements InsetsChangedList
             }
 
             AppMetaData app = appsInfo.getAppMetaData(componentName);
-            // Prevent duplicated entries
+            // 防止重复条目
             // e.g. app is used at 2017/12/31 23:59, and 2018/01/01 00:00
             if (app != null && !apps.contains(app)) {
                 apps.add(app);

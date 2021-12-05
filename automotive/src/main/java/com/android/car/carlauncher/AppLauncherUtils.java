@@ -50,7 +50,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Util class that contains helper method used by app launcher classes.
+ * 包含应用程序启动程序类使用的帮助器方法的Util类。
  */
 class AppLauncherUtils {
     private static final String TAG = "AppLauncherUtils";
@@ -151,20 +151,16 @@ class AppLauncherUtils {
     }
 
     /**
-     * Gets all the components that we want to see in the launcher in unsorted order, including
-     * launcher activities and media services.
+     * 获取我们希望在启动器中以未排序的顺序看到的所有组件，包括启动器活动和媒体服务。
      *
-     * @param blackList             A (possibly empty) list of apps (package names) to hide
-     * @param customMediaComponents A (possibly empty) list of media components (component names)
-     *                              that shouldn't be shown in Launcher because their applications'
-     *                              launcher activities will be shown
-     * @param appTypes              Types of apps to show (e.g.: all, or media sources only)
-     * @param openMediaCenter       Whether launcher should navigate to media center when the
-     *                              user selects a media source.
-     * @param launcherApps          The {@link LauncherApps} system service
-     * @param carPackageManager     The {@link CarPackageManager} system service
-     * @param packageManager        The {@link PackageManager} system service
-     * @return a new {@link LauncherAppsInfo}
+     * @param blackList             要隐藏的应用程序（包名称）列表（可能为空）
+     * @param customMediaComponents 不应在Launcher中显示的媒体组件（组件名称）列表（可能为空），因为将显示其应用程序的Launcher活动
+     * @param appTypes              要显示的应用程序类型（例如：全部或仅媒体源）
+     * @param openMediaCenter       当用户选择媒体源时，启动器是否应导航到media center。
+     * @param launcherApps          {@link LauncherApps}系统服务
+     * @param carPackageManager     {@link CarPackageManager}系统服务
+     * @param packageManager        {@link PackageManager}系统服务
+     * @return 一个新的 {@link LauncherAppsInfo}
      */
     @NonNull
     static LauncherAppsInfo getLauncherApps(
@@ -181,10 +177,11 @@ class AppLauncherUtils {
                 || carMediaManager == null) {
             return EMPTY_APPS_INFO;
         }
-
+        // 检索所有符合给定意图的服务
         List<ResolveInfo> mediaServices = packageManager.queryIntentServices(
                 new Intent(MediaBrowserService.SERVICE_INTERFACE),
                 PackageManager.GET_RESOLVED_FILTER);
+        // 检索指定packageName的Activity的列表
         List<LauncherActivityInfo> availableActivities =
                 launcherApps.getActivityList(null, Process.myUserHandle());
 
@@ -219,9 +216,7 @@ class AppLauncherUtils {
                             }
                         },
                         context -> {
-                            // getLaunchIntentForPackage looks for a main activity in the category
-                            // Intent.CATEGORY_INFO, then Intent.CATEGORY_LAUNCHER, and returns null
-                            // if neither are found
+                            // 返回系统中所有MainActivity带有Intent.CATEGORY_INFO 和 Intent.CATEGORY_LAUNCHER的intent
                             Intent packageLaunchIntent =
                                     packageManager.getLaunchIntentForPackage(packageName);
                             AppLauncherUtils.launchApp(context,
@@ -247,7 +242,7 @@ class AppLauncherUtils {
                         .setComponent(componentName)
                         .addCategory(Intent.CATEGORY_LAUNCHER)
                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
+                    // 获取app的name，和 app的图标
                     AppMetaData appMetaData = new AppMetaData(
                         info.getLabel(),
                         componentName,
