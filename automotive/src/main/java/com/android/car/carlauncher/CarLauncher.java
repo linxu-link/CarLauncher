@@ -16,6 +16,8 @@
 
 package com.android.car.carlauncher;
 
+import static android.content.Context.ACTIVITY_SERVICE;
+
 import android.app.ActivityManager;
 import android.app.ActivityView;
 import android.car.app.CarActivityView;
@@ -65,48 +67,50 @@ public class CarLauncher extends FragmentActivity {
     private DisplayManager mDisplayManager;
     private final Handler mMainHandler = new Handler(Looper.getMainLooper());
 
-    /** Set to {@code true} once we've logged that the Activity is fully drawn. */
+    /**
+     * 一旦我们记录活动已完全绘制，则设置为{@code true}。
+     */
     private boolean mIsReadyLogged;
 
-    private final ActivityView.StateCallback mActivityViewCallback =
-            new ActivityView.StateCallback() {
-                @Override
-                public void onActivityViewReady(ActivityView view) {
-                    if (DEBUG) Log.d(TAG, "onActivityViewReady(" + getUserId() + ")");
-                    mActivityViewReady = true;
-                    startMapsInActivityView();
-                    maybeLogReady();
-                }
+    private final ActivityView.StateCallback mActivityViewCallback = new ActivityView.StateCallback() {
+        @Override
+        public void onActivityViewReady(ActivityView view) {
+            if (DEBUG) Log.d(TAG, "onActivityViewReady(" + getUserId() + ")");
+            mActivityViewReady = true;
+            startMapsInActivityView();
+            maybeLogReady();
+        }
 
-                @Override
-                public void onActivityViewDestroyed(ActivityView view) {
-                    if (DEBUG) Log.d(TAG, "onActivityViewDestroyed(" + getUserId() + ")");
-                    mActivityViewReady = false;
-                }
+        @Override
+        public void onActivityViewDestroyed(ActivityView view) {
+            if (DEBUG) Log.d(TAG, "onActivityViewDestroyed(" + getUserId() + ")");
+            mActivityViewReady = false;
+        }
 
-                @Override
-                public void onTaskMovedToFront(int taskId) {
-                    if (DEBUG) {
-                        Log.d(TAG, "onTaskMovedToFront(" + getUserId() + "): started="
-                                + mIsStarted);
-                    }
-                    try {
-                        if (mIsStarted) {
-                            ActivityManager am =
-                                    (ActivityManager) getSystemService(ACTIVITY_SERVICE);
-                            am.moveTaskToFront(CarLauncher.this.getTaskId(), /* flags= */ 0);
-                        }
-                    } catch (RuntimeException e) {
-                        Log.w(TAG, "Failed to move CarLauncher to front.");
-                    }
+        @Override
+        public void onTaskMovedToFront(int taskId) {
+            if (DEBUG) {
+                Log.d(TAG, "onTaskMovedToFront(" + getUserId() + "): started=" + mIsStarted);
+            }
+            try {
+                if (mIsStarted) {
+                    ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+                    am.moveTaskToFront(CarLauncher.this.getTaskId(), /* flags= */ 0);
                 }
-            };
+            } catch (RuntimeException e) {
+                Log.w(TAG, "Failed to move CarLauncher to front.");
+            }
+        }
+    };
 
     private final DisplayListener mDisplayListener = new DisplayListener() {
         @Override
-        public void onDisplayAdded(int displayId) {}
+        public void onDisplayAdded(int displayId) {
+        }
+
         @Override
-        public void onDisplayRemoved(int displayId) {}
+        public void onDisplayRemoved(int displayId) {
+        }
 
         @Override
         public void onDisplayChanged(int displayId) {
@@ -121,9 +125,8 @@ public class CarLauncher extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Don't show the maps panel in multi window mode.
-        // NOTE: CTS tests for split screen are not compatible with activity views on the default
-        // activity of the launcher
+        // 在多窗口模式下不显示“地图”面板。
+        // 注意：拆分屏幕的CTS测试与启动器默认活动的活动视图不兼容
         if (isInMultiWindowMode() || isInPictureInPictureMode()) {
             setContentView(R.layout.car_launcher_multiwindow);
         } else {
@@ -170,12 +173,11 @@ public class CarLauncher extends FragmentActivity {
         if (mActivityView == null || !mActivityViewReady) {
             return;
         }
-        // If we happen to be be resurfaced into a multi display mode we skip launching content
-        // in the activity view as we will get recreated anyway.
+        // 如果我们碰巧被重新呈现为多显示模式，我们将跳过在“Activity”视图中启动内容，因为我们无论如何都会被重新创建。
         if (isInMultiWindowMode() || isInPictureInPictureMode()) {
             return;
         }
-        // Don't start Maps when the display is off for ActivityVisibilityTests.
+        // 在“活动可见性测试（ActivityVisibilityTests）”的显示关闭时不要启动地图。
         if (getDisplay().getState() != Display.STATE_ON) {
             return;
         }
@@ -187,6 +189,7 @@ public class CarLauncher extends FragmentActivity {
     }
 
     private Intent getMapsIntent() {
+        // 为应用程序的主Activity创建一个意图，不指定要运行的特定Activity，而是提供一个选择器来查找该Activity。
         return Intent.makeMainSelectorActivity(Intent.ACTION_MAIN, Intent.CATEGORY_APP_MAPS);
     }
 
@@ -213,15 +216,16 @@ public class CarLauncher extends FragmentActivity {
         fragmentTransaction.commitNow();
     }
 
-    /** Logs that the Activity is ready. Used for startup time diagnostics. */
+    /**
+     * 记录活动已准备就绪。用于启动时间诊断。
+     */
     private void maybeLogReady() {
         if (DEBUG) {
             Log.d(TAG, "maybeLogReady(" + getUserId() + "): activityReady=" + mActivityViewReady
                     + ", started=" + mIsStarted + ", alreadyLogged: " + mIsReadyLogged);
         }
         if (mActivityViewReady && mIsStarted) {
-            // We should report everytime - the Android framework will take care of logging just
-            // when it's effectivelly drawn for the first time, but....
+            // 我们每次都应该报告-Android框架将在第一次有效绘制日志时处理日志记录，但是。。。。
             reportFullyDrawn();
             if (!mIsReadyLogged) {
                 // ... we want to manually check that the Log.i below (which is useful to show
