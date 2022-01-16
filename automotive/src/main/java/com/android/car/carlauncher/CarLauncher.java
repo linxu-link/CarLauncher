@@ -40,22 +40,18 @@ import androidx.fragment.app.FragmentTransaction;
 import com.android.car.media.common.PlaybackFragment;
 
 /**
- * Basic Launcher for Android Automotive which demonstrates the use of {@link ActivityView} to host
- * maps content.
+ * Android Automotive的基本启动器，演示如何使用{@link ActivityView}托管地图内容。
  *
- * <p>Note: On some devices, the ActivityView may render with a width, height, and/or aspect
- * ratio that does not meet Android compatibility definitions. Developers should work with content
- * owners to ensure content renders correctly when extending or emulating this class.
+ * <p>注意：在某些设备上，ActivityView的渲染宽度、高度和/或纵横比可能不符合Android兼容性定义。
+ * 开发人员应与内容所有者合作，以确保在扩展或模拟此类时正确呈现内容。
  *
- * <p>Note: Since the hosted maps Activity in ActivityView is currently in a virtual display, the
- * system considers the Activity to always be in front. Launching the maps Activity with a direct
- * Intent will not work. To start the maps Activity on the real display, send the Intent to the
- * Launcher with the {@link Intent#CATEGORY_APP_MAPS} category, and the launcher will start the
- * Activity on the real display.
+ * <p>注意：由于ActivityView中的hosted maps活动当前处于虚拟屏幕，因此系统认为该活动始终位于前面。
+ * 以直接意图启动“地图”活动将不起作用。
+ * 要在real display上启动“地图”活动，请使用{@link Intent#CATEGORY_APP_MAPS}类别将意图发送给启动器，
+ * 启动器将在real display上启动活动。
  *
- * <p>Note: The state of the virtual display in the ActivityView is nondeterministic when
- * switching away from and back to the current user. To avoid a crash, this Activity will finish
- * when switching users.
+ * <p>注意：从当前用户切换或切换回当前用户时，ActivityView中虚拟显示的状态是不确定的。
+ * 为避免崩溃，此活动将在切换用户时完成。
  */
 public class CarLauncher extends FragmentActivity {
     private static final String TAG = "CarLauncher";
